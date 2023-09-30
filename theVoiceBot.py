@@ -22,9 +22,12 @@ if openai.api_key not in st.session_state:
   openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 if "messages" not in st.session_state:
+  st.warning("""Data input into this is is not recorded, stored, or viewable in any way by the bot or author.
+                   For OpenAI API privacy policy, refer to https://openai.com/enterprise-privacy""", icon=None)
   st.session_state["messages"] = [ChatMessage(role="system", content=setupPrompt)]
-  st.session_state.messages.append(ChatMessage(role="assistant", content="OK let's talk about the voice. I'm going to ask you a series of questions. Answer as if there was a person on the other side, and then I'll give you a indication where you fit on the spectrum of views. Is now a good time for you?"))
-
+  st.session_state.messages.append(ChatMessage(role="assistant", content=prompts.welcomePrompt))
+  st.session_state.messages.append(ChatMessage(role="assistant", content="I've been trained on the voice yes/no document from the AEC only, so I don't know about viewpoints and arguments not presented in those. Feel free to raise any other arguments while we chat and I'll incorporate those."))
+  st.session_state.messages.append(ChatMessage(role="assistant", content="Ready to start?"))
 for msg in st.session_state.messages:
     if (msg.role == "assistant" or msg.role == "user"):
       st.chat_message(msg.role).write(msg.content)
