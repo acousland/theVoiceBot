@@ -6,6 +6,7 @@ import streamlit as st
 import prompts
 import sourceMaterial
 
+st.image('assets/header_icon.png', width=150)
 st.title("The Voice Bot")
 #st.warning('TheVoiceBot will not capture any data entered  ', icon="⚠️")
 setupPrompt = prompts.botDirectionsPrompt + prompts.enquiryLinesPrompt
@@ -24,7 +25,8 @@ if openai.api_key not in st.session_state:
 
 if "messages" not in st.session_state:
   st.warning("""Data input into this is is not recorded, stored, or viewable in any way by the bot or author.
-                   For OpenAI API privacy policy, refer to https://openai.com/enterprise-privacy""", icon=None)
+                For OpenAI API privacy policy, refer to https://openai.com/enterprise-privacy. 
+                Authored by Aaron Cousland https://www.linkedin.com/in/aaron-cousland/""", icon=None)
   st.session_state["messages"] = [ChatMessage(role="system", content=sourceMaterial.noSummary)]
   st.session_state["messages"] = [ChatMessage(role="system", content=sourceMaterial.yesSummary)]
   st.session_state["messages"] = [ChatMessage(role="system", content=setupPrompt)]
