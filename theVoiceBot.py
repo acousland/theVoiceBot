@@ -5,10 +5,16 @@ import openai
 import streamlit as st
 import prompts
 import sourceMaterial
+import time
+
+
+with open('header.md', 'r') as f:
+    body = f.read()
 
 st.image('assets/header_icon.png', width=150)
-st.title("The Voice Bot")
-#st.warning('TheVoiceBot will not capture any data entered  ', icon="⚠️")
+
+st.markdown(body, unsafe_allow_html=False, help=None)
+
 setupPrompt = prompts.botDirectionsPrompt + prompts.enquiryLinesPrompt
 
 class StreamHandler(BaseCallbackHandler):
@@ -24,13 +30,10 @@ if openai.api_key not in st.session_state:
   openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 if "messages" not in st.session_state:
-  st.warning("""Data input into this is is not recorded, stored, or viewable in any way by the bot or author.
-                For OpenAI API privacy policy, refer to https://openai.com/enterprise-privacy. 
-                Authored by Aaron Cousland https://www.linkedin.com/in/aaron-cousland/""", icon=None)
   st.session_state["messages"] = [ChatMessage(role="system", content=sourceMaterial.noSummary)]
   st.session_state["messages"] = [ChatMessage(role="system", content=sourceMaterial.yesSummary)]
   st.session_state["messages"] = [ChatMessage(role="system", content=setupPrompt)]
-  st.session_state.messages.append(ChatMessage(role="assistant", content=prompts.welcomePrompt))
+  st.session_state.messages.append(ChatMessage(role="assistant", content=prompts.welcomePrompt))  
   st.session_state.messages.append(ChatMessage(role="assistant", content="I've been trained on the voice yes/no document from the AEC only, so I don't know about viewpoints and arguments not presented in those. Feel free to raise any other arguments while we chat and I'll incorporate those."))
   st.session_state.messages.append(ChatMessage(role="assistant", content="Ready to start?"))
 
@@ -46,7 +49,6 @@ if prompt := st.chat_input():
         stream_handler = StreamHandler(st.empty())
         llm = ChatOpenAI(openai_api_key=openai.api_key, 
                          streaming=True, 
-                         #model = "gpt-3.5-turbo-0613",
                          model = "gpt-4",
                          callbacks=[stream_handler])
         response = llm(st.session_state.messages)
