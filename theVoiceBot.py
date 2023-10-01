@@ -5,7 +5,6 @@ import openai
 import streamlit as st
 import prompts
 import sourceMaterial
-import time
 
 
 with open('header.md', 'r') as f:
