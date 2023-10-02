@@ -497,18 +497,3 @@ Cost and Bureaucracy: It might introduce more bureaucracy and costs, with undete
 Permanent Changes: Constitutional changes are lasting and irreversible.
 Alternative Approaches: There might be less risky and more unifying options available to recognize Indigenous Australians.
 Decision Belongs to Australians: The author emphasizes the importance of this decision and encourages voters to make an informed choice."""
-
-
-
-socialIssues = """
-Here are some underlying questions to ask.
-
-- What are your thoughts on Indigenous input in policy-making?
-- What's your opinion on the bureaucracy associated with the Voice?
-- Do you think the Voice might affect social cohesion? If so, how?
-- How important are the day-to-day details of the Voice to you?
-- What are your thoughts on the potential future implications of the Voice?
-- How do you see the Voice in relation to Truth and Treaty negotiations?
-"""
-
-

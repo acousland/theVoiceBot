@@ -21,5 +21,5 @@ enquiryLinesPrompt = """Here are some underlying questions to ask.
 
 
 
-welcomePrompt = """I'm a bot and I'm here to talk to you about the voice. I'll ask you a series of questions and then I'll give you a indication where you fit on the spectrum of views. Having more detail in your responses will allow me to provide more nuanced feedback.
+welcomePrompt = """I'm going ask you a series of questions about the Voice and then I'll give you a indication where you fit on the spectrum of views. Having more detail in your responses will allow me to provide more nuanced feedback.
                    """
