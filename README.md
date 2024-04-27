@@ -26,12 +26,17 @@ Built with Python and LangChain, The Voice Bot employs Streamlit for its user in
 
 # Limitations and Ethical Issues
  
-Accuracy of Information: The bot may occasionally generate inaccurate information. Users should verify facts with multiple authoritative sources.
-Limited Scope: The bot is based on a specific dataset and may not reflect the most recent developments.
-Complexity and Insensitivity: The bot may not capture all nuances of sensitive social values due to the complexity of the issues and limitations of the training data.
-Balance Fallacy: The bot might give equal weight to unequal arguments, leading to potentially skewed discussions.
-Compromising Human Autonomy: Heavy reliance on the bot for information might diminish personal agency and critical thinking.
-Disclaimer
+**Accuracy of Information:** The bot may occasionally generate inaccurate information. Users should verify facts with multiple authoritative sources.
+
+**Limited Scope:** The bot is based on a specific dataset and may not reflect the most recent developments.
+
+**Complexity and Insensitivity:** The bot may not capture all nuances of sensitive social values due to the complexity of the issues and limitations of the training data.
+
+**Balance Fallacy:** The bot might give equal weight to unequal arguments, leading to potentially skewed discussions.
+
+**Compromising Human Autonomy:** Heavy reliance on the bot for information might diminish personal agency and critical thinking.
+
+# Disclaimer
 
 The Voice Bot is for informational purposes only and should not be seen as professional advice. The author is not liable for any damages resulting from its use. The bot operates independently, with responses generated through AI, not reflecting the personal views of the author or any affiliated organizations.
 
